@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html style="width: 90%; height: 90%;">
+<head>
+    <title>Prodalit.ru Scraper</title>
+    <meta charset="utf-8" />
+</head>
+<body style="width: 100%; height: 100%;">
+    <div id="message" style="width: 100%; height: 100%; display: flex; justify-content: center; flex-direction: column; align-items: center;">
+        <button onclick="start_scrap()">Начать скрапинг</button>
+        <button style="margin-top: 20px;" onclick="check_db()">Посмотреть содержимое базы данных</button>
+        <button style="margin-top: 20px;" onclick="clear_db()">Очистить базу данных</button>
+    </div>
+<script>
+    async function start_scrap(){
+        window.location.href = "/choose_section_for_scrap";
+    }
+    async function check_db(){
+        window.location.href = "/database";
+    }
+    async function clear_db(){
+        window.location.href = "/clear_database";
+    }
+</script>
+</body>
+</html>

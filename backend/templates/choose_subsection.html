@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html style="width: 90%; height: 90%;">
+<head>
+    <title>Prodalit.ru Scraper</title>
+    <meta charset="utf-8" />
+</head>
+<body style="width: 100%; height: 100%;">
+    <div id="message" style="width: 100%; height: 100%; display: flex; justify-content: center; flex-direction: column; align-items: center;">
+        {% block content %}
+        <form>
+            <label for="section_select">Выберете раздел</label>
+            <select id="section_select">
+                {% for subsection in subsections %}
+                <optgroup>
+                    <option>{{ subsection[0] }}</option>
+                </optgroup>
+                {% endfor %}
+            </select>
+        </form>
+        {% endblock %}
+        <button onclick="send()" style="margin-top: 20px;">Отправить</button>
+    </div>
+<script>
+    async function send(){
+        const e = document.getElementById("section_select");
+        const subsection_name = e.options[e.selectedIndex].text;
+        window.location.href = `/${subsection_name}/choose_number_of_pages_to_scrap`;
+    }
+</script>
+</body>
+</html>
