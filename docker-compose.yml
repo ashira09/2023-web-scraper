@@ -5,11 +5,10 @@ services:
     build: ./backend/
     volumes:
       - ./database/:/app/database
+      - ./data/:/app/data
     ports:
       - "1488:8000"
     depends_on:
       - sqlite3
   sqlite3:
     build: ./database/
-    volumes:
-      - ./data/:/var/lib/data
